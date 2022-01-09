@@ -3,17 +3,17 @@ import "./styles.css";
 import { useState } from "react";
 
 export default function App() {
-  var [value, setValue] = useState("");
-  var [greet, setGreet] = useState("");
-  var [error, setError] = useState("");
+  let [value, setValue] = useState("");
+  const [greet, setGreet] = useState("");
+  const [error, setError] = useState("");
 
-  function inputHandler(event) {
-    var userInput = event.target.value;
+  const inputHandler = (event) => {
+    let userInput = event.target.value;
     value = userInput;
-    setValue(value);
-  }
+    setValue(userInput);
+  };
 
-  function clickHandler() {
+  const clickHandler = () => {
     if (isNaN(value)) {
       setError("Error: You have entered wrong type");
     } else {
@@ -23,7 +23,7 @@ export default function App() {
         setGreet("Sorry! not a leap year");
       }
     }
-  }
+  };
 
   return (
     <div className="App">
